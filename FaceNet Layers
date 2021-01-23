@@ -1,0 +1,50 @@
+input_shape >> (3,96,96)
+
+X_input=Input(input_shape)
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Z ...............3x3
+C................64,7x7,2
+bn
+A.................relu
+                                            1 Layer                 Z CBA Z P
+Z...............1x1
+MP...............3x3,2
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+C................64,1x1,1
+bn    ............0.00001                   2 Layer                   CBA Z
+A.................relu
+
+Z...............1x1
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Z ...............1x1
+C................192,3x3,1
+bn
+A.................relu                      3 Layer                  Z CBA C P
+
+Z...............1x1
+MP...............3x3,2
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+               INCEPTION
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+AP................3x3,1,channels_first
+F                                            TOP Layer
+D ..................128
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Lambda............normalize
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+model.................Model
+
+
+
+
+
