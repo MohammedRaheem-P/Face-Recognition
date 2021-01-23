@@ -14,3 +14,5 @@ based on the distance...predicting similarities
 
 FaceNet is trained by triplet loss function
 observation/eg form of (A,P,N) where A-Anchor image, P-Positive (similar)image, N-Negative(different)image
+
+Reference : FaceNet -A Unified Embedding for Face Recognition and Clustering
